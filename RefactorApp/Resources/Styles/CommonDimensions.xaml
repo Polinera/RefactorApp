@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <x:Double x:Key="Spacing_xxs">4</x:Double>
+    <x:Double x:Key="Spacing_xs">8</x:Double>
+    <x:Double x:Key="Spacing_s">16</x:Double>
+    <x:Double x:Key="Spacing_m">24</x:Double>
+    <x:Double x:Key="Spacing_l">32</x:Double>
+    <x:Double x:Key="Spacing_xl">40</x:Double>
+    <x:Double x:Key="Spacing_xxl">48</x:Double>
+
+    <Thickness x:Key="Margin">20</Thickness>
+    <Thickness x:Key="Page_SidePadding">24,0</Thickness>
+    <Thickness x:Key="LeftMargin">24,0,0,0</Thickness>
+
+    <Thickness x:Key="Vertical_Spacing_m"
+               Bottom="{StaticResource Spacing_m}"
+               Top="{StaticResource Spacing_m}"/>
+
+
+
+
+    <x:Double x:Key="Entry_Size">48</x:Double>
+    <x:Double x:Key="Entry_MinimumHeightRequest">48</x:Double>
+    <x:Double x:Key="Entry_MinimumWidthRequest">320</x:Double>
+
+    <x:Double x:Key="Border_HeightRequest">200</x:Double>
+    <x:Double x:Key="Border_WidthRequest">150</x:Double>
+
+    <x:Double x:Key="Image_WidthRequest">100</x:Double>
+
+
+
+    <x:Int32 x:Key="CornerRadius_Entry">6</x:Int32>
+
+</ResourceDictionary>

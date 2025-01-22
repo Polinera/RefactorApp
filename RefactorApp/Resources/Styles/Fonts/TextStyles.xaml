@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <x:Double x:Key="Hero">48</x:Double>
+    <x:Double x:Key="LargeTitle">26</x:Double>
+    <x:Double x:Key="Title">22</x:Double>
+    <x:Double x:Key="SubTitle">18</x:Double>
+    <x:Double x:Key="Body">18</x:Double>
+    <x:Double x:Key="Label">14</x:Double>
+    <x:Double x:Key="Caption">16</x:Double>
+    <x:Double x:Key="Button">18</x:Double>
+    <x:Double x:Key="SmallButton">16</x:Double>
+
+    <Style
+        x:Key="Text_Hero_Title"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource TwinkleStar}"/>
+        <Setter Property="FontSize" Value="{StaticResource Hero}"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextColorPrimaryLight}, Dark={StaticResource TextColorPrimaryDark}}"/>
+    </Style>
+
+    <Style
+        x:Key="Text_Large_Title"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource TwinkleStar}"/>
+        <Setter Property="FontSize" Value="{StaticResource LargeTitle}"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextColorPrimaryLight}, Dark={StaticResource TextColorPrimaryDark}}"/>
+    </Style>
+
+    <Style
+        x:Key="Text_Title"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource TwinkleStar}"/>
+        <Setter Property="FontSize" Value="{StaticResource Title}"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextColorPrimaryLight}, Dark={StaticResource TextColorPrimaryDark}}"/>
+    </Style>
+
+    <Style
+        x:Key="Text_SubTitle"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource PoiretOne-Regular}"/>
+        <Setter Property="FontSize" Value="{StaticResource SubTitle}"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextColorPrimaryLight}, Dark={StaticResource TextColorPrimaryDark}}"/>
+    </Style>
+
+    <Style
+        x:Key="Text_Body"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource PoiretOne-Regular}"/>
+        <Setter Property="FontSize" Value="{StaticResource Body}"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextColorSecondaryLight}, Dark={StaticResource TextColorSecondaryDark}}"/>
+    </Style>
+
+    <Style
+        x:Key="Text_Button"
+        TargetType="Button">
+        <Setter Property="FontFamily" Value="{StaticResource PoiretOne-Regular}"/>
+        <Setter Property="FontSize" Value="{StaticResource Button}"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextColorSecondaryLight}, Dark={StaticResource TextColorSecondaryDark}}"/>
+    </Style>
+
+    <Style
+        x:Key="Text_SmallButton"
+        TargetType="Button">
+        <Setter Property="FontFamily" Value="{StaticResource PoiretOne-Regular}"/>
+        <Setter Property="FontSize" Value="{StaticResource SmallButton}"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextColorSecondaryLight}, Dark={StaticResource TextColorSecondaryDark}}"/>
+    </Style>
+
+    <Style
+        x:Key="Text_Caption"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource PoiretOne-Regular}"/>
+        <Setter Property="FontSize" Value="{StaticResource Caption}"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextColorSecondaryLight}, Dark={StaticResource TextColorSecondaryDark}}"/>
+    </Style>
+
+    <Style
+        x:Key="Text_Label"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource PoiretOne-Regular}"/>
+        <Setter Property="FontSize" Value="{StaticResource Label}"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextColorSecondaryLight}, Dark={StaticResource TextColorSecondaryDark}}"/>
+    </Style>
+
+    <Style
+        x:Key="Text_Caption_Entry"
+        TargetType="Entry">
+        <Setter Property="FontFamily" Value="{StaticResource PoiretOne-Regular}"/>
+        <Setter Property="FontSize" Value="{StaticResource Caption}"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource InteractiveColorLight}, Dark={StaticResource InteractiveColorDark}}"/>
+    </Style>
+
+    <Style TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextColorSecondaryLight}, Dark={StaticResource TextColorSecondaryDark}}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontFamily" Value="PoiretOne-Regular" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
