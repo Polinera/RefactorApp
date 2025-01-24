@@ -10,7 +10,7 @@
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
                 <ResourceDictionary Source="Resources/Styles/CommonDimensions.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Fonts/Fonts.xaml" />
-                <ResourceDictionary Source="Resources/Styles/Fonts/TextStyles.xaml" />
+                <ResourceDictionary Source="Resources/Styles/TextStyles.xaml" />
                 <ResourceDictionary Source="Resources/Styles/ButtonStyles.xaml" />
                 <ResourceDictionary Source="Resources/Styles/ConteinerStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>

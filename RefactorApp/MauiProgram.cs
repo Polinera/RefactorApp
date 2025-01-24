@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using RefactorApp.Core.Services;
-using RefactorApp.UI;
+using RefactorApp.Core.ViewModels;
+using RefactorApp.UI.Views;
 using RefactorApp.UI.Services;
 
 namespace RefactorApp
@@ -25,6 +26,7 @@ namespace RefactorApp
             builder.Services.AddSingleton<INavigationFlowService, NavigationFlowService>();
 
             builder.Services.AddTransient<HomePage>();
+            builder.Services.AddTransient<HomeViewModel>();
             builder.Services.AddTransient<GoalPage>();
             builder.Services.AddTransient<HistoryPage>();
 

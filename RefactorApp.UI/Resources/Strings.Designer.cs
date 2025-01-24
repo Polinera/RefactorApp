@@ -61,11 +61,20 @@ namespace RefactorApp.UI.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  Mlafkkdlshvn  dskfjljkdf.
+        ///   Looks up a localized string similar to  Your goal list.
         /// </summary>
-        internal static string Main {
+        internal static string GoalMainCard_Label_Text {
             get {
-                return ResourceManager.GetString("Main", resourceCulture);
+                return ResourceManager.GetString("GoalMainCard_Label_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  History That Inspires.
+        /// </summary>
+        internal static string HistoryMainCard_Label_Text {
+            get {
+                return ResourceManager.GetString("HistoryMainCard_Label_Text", resourceCulture);
             }
         }
     }

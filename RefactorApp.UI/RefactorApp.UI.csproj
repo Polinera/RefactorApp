@@ -9,6 +9,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.0" />
+		<PackageReference Include="ReactiveUI" Version="20.1.63" />
+		<PackageReference Include="ReactiveUI.Maui" Version="20.1.63" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -32,13 +34,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="GoalPage.xaml">
+	  <MauiXaml Update="Views\GoalPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="HistoryPage.xaml">
+	  <MauiXaml Update="Views\HistoryPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="HomePage.xaml">
+	  <MauiXaml Update="Views\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

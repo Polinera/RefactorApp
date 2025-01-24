@@ -43,7 +43,7 @@
     <Style
         x:Key="Text_SubTitle"
         TargetType="Label">
-        <Setter Property="FontFamily" Value="{StaticResource TwinkleStar}"/>
+        <Setter Property="FontFamily" Value="{StaticResource PoiretOne-Regular}"/>
         <Setter Property="FontSize" Value="{StaticResource SubTitle}"/>
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextColorPrimaryLight}, Dark={StaticResource TextColorPrimaryDark}}"/>
     </Style>

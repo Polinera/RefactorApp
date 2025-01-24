@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rx:ReactiveContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RefactorApp.UI.Views.GoalPage"
+             xmlns:vm="clr-namespace:RefactorApp.Core.ViewModels;assembly=RefactorApp.Core"
+                        xmlns:rx="clr-namespace:ReactiveUI.Maui;assembly=ReactiveUI.Maui"
+                        x:TypeArguments="vm:GoalViewModel">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</rx:ReactiveContentPage>
