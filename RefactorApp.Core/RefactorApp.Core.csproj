@@ -7,16 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Helpers\**" />
+    <EmbeddedResource Remove="Helpers\**" />
+    <MauiCss Remove="Helpers\**" />
+    <MauiXaml Remove="Helpers\**" />
+    <None Remove="Helpers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="ReactiveUI" Version="20.1.63" />
     <PackageReference Include="ReactiveUI.Maui" Version="20.1.63" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\RefactorApp.Models\RefactorApp.Models.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Helpers\" />
   </ItemGroup>
 
 </Project>

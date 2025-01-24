@@ -11,47 +11,47 @@ using System.Threading.Tasks;
 
 namespace RefactorApp.Core.ViewModels
 {
-    public class HomeViewModel:ReactiveObject
+    public class HomeViewModel : ReactiveObject
     {
-        private readonly INavigationService _navigationService;
-        public ObservableCollection<CardModelMainPage> MainMenuCardItem { get; }
-
         public ReactiveCommand<string, Unit> NavigateCommand { get; }
 
-        public HomeViewModel(INavigationService navigationService)
-        {
-            _navigationService = navigationService ?? throw new ArgumentNullException(nameof(navigationService));
+        public ObservableCollection<CardModelMainPage> CardModelItem { get; }
 
-            MainMenuCardItem = new ObservableCollection<CardModelMainPage>
+        public HomeViewModel()
         {
-            new CardModelMainPage { Image = "historymainimage.jpg", Title = "Histories of powerful people", RouteTo = "history" },
-            new CardModelMainPage { Image = "goalmainimage.jpg", Title = "Manage your goals", RouteTo = "goal" }
-            
-        };
-
-            // Update Command to Take the Entire Model Object
             NavigateCommand = ReactiveCommand.CreateFromTask<string>(NavigateToPage);
+
+            // Initialize collection to avoid null reference issues
+            CardModelItem = new ObservableCollection<CardModelMainPage>();
+
+            // Populate data
+            AddEntryToModel();
         }
 
-
-        public async Task NavigateToPage(string pageName)
+        private void AddEntryToModel()
         {
-            if (string.IsNullOrEmpty(pageName)) return;
-
-            switch (pageName)
+            CardModelItem.Add(new CardModelMainPage
             {
-                case "Page1":
-                    await Shell.Current.GoToAsync("InspiringHistryView");
-                    break;
-                case "Page2":
-                    await Shell.Current.GoToAsync("GoalView");
-                    break;
-                case "Page3":
-                    await Shell.Current.GoToAsync("PersonalityQuizView");
-                    break;
-                default:
-                    break;
-            }
+                Title = "Manage Your Goals",
+                Image = "goalmainimage",
+                RouteTo = "goal",
+                NavigateCommand = NavigateCommand
+            });
+
+            CardModelItem.Add(new CardModelMainPage
+            {
+                Title = "History Overview",
+                Image = "historymainimage",
+                RouteTo = "history",
+                NavigateCommand = NavigateCommand
+            });
+        }
+
+        public async Task NavigateToPage(string routeTo)
+        {
+            if (string.IsNullOrEmpty(routeTo)) return;
+
+            await Shell.Current.GoToAsync($"//{routeTo}");
         }
     }
 }

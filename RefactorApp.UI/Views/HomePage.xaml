@@ -26,62 +26,32 @@
                 Grid.Column="0" 
                 Grid.ColumnSpan="2" />
 
-            <Border Grid.Row="1" Grid.Column="0" HeightRequest="200">
-                <Border.Content>
-                    <VerticalStackLayout>
-                        <Image 
-                            Source="histry.png" 
-                            HeightRequest="100" 
-                            Aspect="AspectFill" />
-                        <Label 
-                            Style="{StaticResource Text_Body}"
-                            Text="Histories of powerful women" 
-                            HorizontalOptions="Center" />
-                    </VerticalStackLayout>
-                </Border.Content>
-                <Border.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding NavigateCommand}" CommandParameter="Page1" />
-                </Border.GestureRecognizers>
-            </Border>
+            <CollectionView 
+                Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                ItemsSource="{Binding CardModelItem}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" />
+                </CollectionView.ItemsLayout>
 
-
-            <!-- Card 2 -->
-            <Border Grid.Row="1" Grid.Column="1" HeightRequest="200">
-                <Border.Content>
-                    <VerticalStackLayout>
-                        <Image
-                            Source="goals.jpg"
-                            HeightRequest="100"
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource MainPageCardStyle}">
+                        <VerticalStackLayout Padding="10">
+                            <Image 
+                            Source="{Binding Image}" 
+                            
                             Aspect="AspectFill" />
-                        <Label 
-                            Style="{StaticResource Text_Body}"
-                            Text="Menange your goals" 
-                            HorizontalOptions="Center" />
-                    </VerticalStackLayout>
-                </Border.Content>
-                <Border.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding NavigateCommand}" CommandParameter="Page2" />
-                </Border.GestureRecognizers>
-            </Border>
-
-            <!-- Card 3 -->
-            <Border Grid.Row="2" Grid.Column="0" HeightRequest="200">
-                <Border.Content>
-                    <VerticalStackLayout>
-                        <Image 
-                            Source="images.jpg" 
-                            HeightRequest="100" 
-                            Aspect="AspectFill" />
-                        <Label 
-                            Style="{StaticResource Text_Body}"
-                            Text="Find your weaknesses and strengths" 
-                            HorizontalOptions="Center" />
-                    </VerticalStackLayout>
-                </Border.Content>
-                <Border.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding NavigateCommand}" CommandParameter="Page3" />
-                </Border.GestureRecognizers>
-            </Border>
+                                <Button Style="{StaticResource ButtonPrimaryStyle}"
+                            Text="{Binding Title}" 
+                            
+                            Command="{Binding NavigateCommand}"
+                            CommandParameter="{Binding RouteTo}" />
+                        </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        
         </Grid>
-    </ScrollView>
+</ScrollView>
 </rx:ReactiveContentPage>

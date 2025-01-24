@@ -29,6 +29,9 @@ namespace RefactorApp
             builder.Services.AddTransient<HomeViewModel>();
             builder.Services.AddTransient<GoalPage>();
             builder.Services.AddTransient<HistoryPage>();
+            builder.Services.AddTransient<HomeViewModel>();
+            builder.Services.AddTransient<GoalViewModel>();
+            builder.Services.AddTransient<HistoryViewModel>();
 
             var app = builder.Build();
            
