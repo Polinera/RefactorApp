@@ -21,10 +21,8 @@ namespace RefactorApp.Core.ViewModels
         {
             NavigateCommand = ReactiveCommand.CreateFromTask<string>(NavigateToPage);
 
-            // Initialize collection to avoid null reference issues
             CardModelItem = new ObservableCollection<CardModelMainPage>();
 
-            // Populate data
             AddEntryToModel();
         }
 

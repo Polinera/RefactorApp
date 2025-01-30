@@ -34,5 +34,10 @@ namespace RefactorApp.Core.Services
         {
             await _navigationService.NavigateToAsync("home");
         }
+
+        public async Task NavigateToDetailHistoryAsync()
+        {
+            await _navigationService.NavigateToAsync("detailedHistoryView");
+        }
     }
 }

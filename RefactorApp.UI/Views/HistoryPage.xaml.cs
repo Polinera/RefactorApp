@@ -4,9 +4,9 @@ namespace RefactorApp.UI.Views;
 
 public partial class HistoryPage 
 {
-    public HistoryViewModel ViewModel { get; }
     public HistoryPage(HistoryViewModel viewModel)
 	{
 		InitializeComponent();
-	}
+		ViewModel = viewModel;
+    }
 }

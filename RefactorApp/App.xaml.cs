@@ -26,7 +26,7 @@ namespace RefactorApp
 
         private async Task InitializeAppFlowAsync(INavigationFlowService appFlow)
         {
-            await appFlow.InitializeAppAsync();  // Handle login, onboarding, or home navigation
+            await appFlow.InitializeAppAsync(); 
         }
     }
 }

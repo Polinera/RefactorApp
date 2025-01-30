@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rx:ReactiveContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RefactorApp.UI.Views.DetailedHistoryPage"
+    xmlns:vm="clr-namespace:RefactorApp.Core.ViewModels;assembly=RefactorApp.Core"
+    xmlns:rx="clr-namespace:ReactiveUI.Maui;assembly=ReactiveUI.Maui"
+    x:TypeArguments="vm:DetailedHistoryViewModel">
+    <Grid>
+        <VerticalStackLayout>
+            <Label Text="Pokemon Name" />
+            <Label Text="{Binding Name}" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" />
+            <Image Source="{Binding Image}" 
+                   HeightRequest="200" 
+                   HorizontalOptions="Center" />
+            
+            <Label Text="{Binding Description}" 
+                   FontSize="18" 
+                   HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </Grid>
+</rx:ReactiveContentPage>

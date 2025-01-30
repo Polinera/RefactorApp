@@ -2,7 +2,6 @@
 using RefactorApp.Core.Services;
 using RefactorApp.Core.ViewModels;
 using RefactorApp.UI.Views;
-using RefactorApp.UI.Services;
 
 namespace RefactorApp
 {
@@ -29,9 +28,10 @@ namespace RefactorApp
             builder.Services.AddTransient<HomeViewModel>();
             builder.Services.AddTransient<GoalPage>();
             builder.Services.AddTransient<HistoryPage>();
-            builder.Services.AddTransient<HomeViewModel>();
             builder.Services.AddTransient<GoalViewModel>();
             builder.Services.AddTransient<HistoryViewModel>();
+            builder.Services.AddTransient<DetailedHistoryPage>();
+            builder.Services.AddTransient<DetailedHistoryViewModel>();
 
             var app = builder.Build();
            

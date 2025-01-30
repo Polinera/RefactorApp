@@ -15,11 +15,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="ReactiveUI" Version="20.1.63" />
     <PackageReference Include="ReactiveUI.Maui" Version="20.1.63" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RefactorApp.Lib\RefactorApp.Lib.csproj" />
     <ProjectReference Include="..\RefactorApp.Models\RefactorApp.Models.csproj" />
   </ItemGroup>
 

@@ -1,0 +1,14 @@
+[
+  {
+    "Name": "Marie Curie",
+    "Description": "Pioneer in radioactivity research.",
+    "Image": "history/mariecurieimage.jpg",
+    "RouteTo": "DetailedHistoryView/MarieCurie"
+  },
+  {
+    "Name": "Ada Lovelace",
+    "Description": "Mathematician, considered the first programmer.",
+    "Image": "history/adalovelace.jpg",
+    "RouteTo": "DetailedHistoryView/AdaLovelace"
+  }
+]

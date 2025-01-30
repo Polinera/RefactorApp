@@ -36,22 +36,20 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Border Style="{StaticResource MainPageCardStyle}">
-                        <VerticalStackLayout Padding="10">
-                            <Image 
+                            <VerticalStackLayout Padding="10">
+                                <Image 
                             Source="{Binding Image}" 
                             
                             Aspect="AspectFill" />
                                 <Button Style="{StaticResource ButtonPrimaryStyle}"
                             Text="{Binding Title}" 
-                            
                             Command="{Binding NavigateCommand}"
                             CommandParameter="{Binding RouteTo}" />
-                        </VerticalStackLayout>
+                            </VerticalStackLayout>
                         </Border>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-        
         </Grid>
-</ScrollView>
+    </ScrollView>
 </rx:ReactiveContentPage>
