@@ -24,7 +24,10 @@ namespace RefactorApp.Core.Services
         {
             await _navigationService.NavigateToAsync("goal");
         }
-
+        public async Task NavigateToDetailsAsync()
+        {
+            await _navigationService.NavigateToAsync("");
+        }
         public async Task NavigateToHistoryAsync()
         {
             await _navigationService.NavigateToAsync("history");
