@@ -7,16 +7,32 @@
                         x:TypeArguments="vm:GoalViewModel">
     <VerticalStackLayout Padding="20">
 
-        <Entry Text="{Binding NewGoal, Mode=TwoWay}"
-               Placeholder="Enter your goal..." />
+        <!-- Input for Goal Title -->
+        <Entry x:Name="NewGoalTitleEntry"
+               Text="{Binding NewGoalTitle, Mode=TwoWay}"
+               Placeholder="Enter goal title..." />
 
-        <Button Text="Add Goal"
+        <!-- Input for Goal Description -->
+        <Editor x:Name="NewGoalDescriptionEditor"
+                Text="{Binding NewGoalDescription, Mode=TwoWay}"
+                Placeholder="Enter goal description..." 
+                HeightRequest="100"/>
+
+        <!-- Button to Add Goal -->
+        <Button x:Name="AddGoalButton"
+                Text="Add Goal"
                 Command="{Binding AddGoalCommand}" />
 
+        <!-- ListView to display goals -->
         <ListView ItemsSource="{Binding Goals}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding .}" />
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Title}" FontSize="18" FontAttributes="Bold"/>
+                            <Label Text="{Binding Description}" FontSize="14" TextColor="Gray"/>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
