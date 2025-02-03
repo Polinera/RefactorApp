@@ -15,7 +15,7 @@
     <Color x:Key="Primary_Button_Text_Light_Color">#4A4031</Color>
     <Color x:Key="Secondary_Button_Text_Light_Color">#4A4031</Color>
     <Color x:Key="Primary_Button_BacgroundColor_Light_Color">#8C6B5B</Color>
-    <Color x:Key="Secondary_Button_BacgroundColor_Light_Color">#4D4539</Color>
+    <Color x:Key="Secondary_Button_BacgroundColor_Light_Color">#D5C6A8</Color>
     <Color x:Key="Disabled_Button_BacgroundColor_Light_Color">#B0A799</Color>
     <Color x:Key="Disabled_Button_Text_Light_Color">#242424</Color>
 
@@ -34,17 +34,7 @@
     <Color x:Key="Disabled_Button_BacgroundColor_Dark_Color">#242424</Color>
     <Color x:Key="Disabled_Button_Text_Dark_Color">#5e5e5e</Color>
 
-
-
-
-
-
-
-
-
-
-
-
+    
 
     <Color x:Key="Primary">#512BD4</Color>
     <Color x:Key="PrimaryDark">#ac99ea</Color>

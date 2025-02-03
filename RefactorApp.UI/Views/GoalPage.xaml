@@ -5,37 +5,81 @@
              xmlns:vm="clr-namespace:RefactorApp.Core.ViewModels;assembly=RefactorApp.Core"
                         xmlns:rx="clr-namespace:ReactiveUI.Maui;assembly=ReactiveUI.Maui"
                         x:TypeArguments="vm:GoalViewModel">
-    <VerticalStackLayout Padding="20">
+    
+    <VerticalStackLayout 
+        Padding="20" 
+        Spacing="10">
 
-        <!-- Input for Goal Title -->
-        <Entry x:Name="NewGoalTitleEntry"
-               Text="{Binding NewGoalTitle, Mode=TwoWay}"
-               Placeholder="Enter goal title..." />
+        <Button 
+            Style="{StaticResource ButtonGoalStyle}" 
+            Text="Add Goal" 
+            Command="{Binding ToggleAddGoalCommand}" />
 
-        <!-- Input for Goal Description -->
-        <Editor x:Name="NewGoalDescriptionEditor"
-                Text="{Binding NewGoalDescription, Mode=TwoWay}"
+        <VerticalStackLayout 
+            IsVisible="{Binding IsAddGoalVisible}" 
+            Padding="10" Spacing="10" 
+            BackgroundColor="LightGray">
+            <Entry 
+                Text="{Binding NewGoalTitle, Mode=TwoWay}" 
+                Placeholder="Enter goal title..." />
+            <Editor 
+                Text="{Binding NewGoalDescription, Mode=TwoWay}" 
                 Placeholder="Enter goal description..." 
-                HeightRequest="100"/>
-
-        <!-- Button to Add Goal -->
-        <Button x:Name="AddGoalButton"
-                Text="Add Goal"
+                HeightRequest="100" />
+            <Button 
+                Style="{StaticResource ButtonGoalStyle}"
+                Text="Save Goal" 
                 Command="{Binding AddGoalCommand}" />
+        </VerticalStackLayout>
 
-        <!-- ListView to display goals -->
-        <ListView ItemsSource="{Binding Goals}">
-            <ListView.ItemTemplate>
+        <HorizontalStackLayout Spacing="10">
+            <Button 
+                Style="{StaticResource ButtonGoalStyle}"
+                Text="All" 
+                Command="{Binding SetFilterCommand}" 
+                CommandParameter="All" />
+            <Button 
+                Style="{StaticResource ButtonGoalStyle}"
+                Text="Ongoing" 
+                Command="{Binding SetFilterCommand}" 
+                CommandParameter="Ongoing" />
+            <Button 
+                Style="{StaticResource ButtonGoalStyle}"
+                Text="Completed" 
+                Command="{Binding SetFilterCommand}" 
+                CommandParameter="Completed" />
+        </HorizontalStackLayout>
+
+        <CollectionView ItemsSource="{Binding FilteredGoals}">
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Padding="10">
-                            <Label Text="{Binding Title}" FontSize="18" FontAttributes="Bold"/>
-                            <Label Text="{Binding Description}" FontSize="14" TextColor="Gray"/>
-                        </StackLayout>
-                    </ViewCell>
+                    <SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItems Mode="Execute">
+                                <SwipeItem Text="Complete"
+                                           BackgroundColor="Green"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type vm:GoalViewModel}}, Path=MarkCompleteCommand}"
+                                           CommandParameter="{Binding .}" />
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
+                        <SwipeView.RightItems>
+                            <SwipeItems Mode="Execute">
+                                <SwipeItem Text="Delete"
+                                           BackgroundColor="Red"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type vm:GoalViewModel}}, Path=DeleteGoalCommand}"
+                                           CommandParameter="{Binding .}" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Grid Padding="10">
+                            <Label Text="{Binding Title}" FontSize="18" />
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:GoalViewModel}}, Path=OpenGoalCommand}"
+                                                      CommandParameter="{Binding .}" />
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </SwipeView>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
 </rx:ReactiveContentPage>

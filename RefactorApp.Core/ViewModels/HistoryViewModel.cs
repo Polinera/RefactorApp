@@ -10,50 +10,68 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Runtime.CompilerServices;
 using System.ComponentModel;
+using Microsoft.Extensions.Logging;
+using RefactorApp.Core.Services;
 
 namespace RefactorApp.Core.ViewModels
 {
     public class HistoryViewModel : ReactiveObject, INotifyPropertyChanged
     {
-        public ReactiveCommand<HistoryModel, Unit> NavigateCommand { get; }
+        private readonly INavigationService _navigationService;
+        private readonly ILogger<HistoryViewModel> _logger;
+
+        private string _selectedItem;
+        public string SelectedItem
+        {
+            get => Preferences.Get(nameof(SelectedItem), string.Empty);
+            set
+            {
+                if (value != _selectedItem)
+                {
+                    _selectedItem = value;
+                    Preferences.Set(nameof(SelectedItem), value);
+                    this.RaisePropertyChanged(nameof(SelectedItem));
+                }
+            }
+        }
 
         private string _image;
-        private string _name;
-        private string _routeTo;
-
         public string Image
         {
             get => _image;
             set => this.RaiseAndSetIfChanged(ref _image, value);
         }
 
+        private string _name;
         public string Name
         {
             get => _name;
             set => this.RaiseAndSetIfChanged(ref _name, value);
         }
 
+        private string _routeTo;
         public string RouteTo
         {
             get => _routeTo;
             set => this.RaiseAndSetIfChanged(ref _routeTo, value);
         }
 
-        public ObservableCollection<HistoryModel> HistoryItem { get; set; }
+        public ReactiveCommand<HistoryModel, Unit> NavigateCommand { get; }
 
-        public HistoryViewModel()
+        public ObservableCollection<HistoryModel> HistoryItem { get; }
+
+        public HistoryViewModel(INavigationService navigationService, ILogger<HistoryViewModel> logger)
         {
-            NavigateCommand = ReactiveCommand.CreateFromTask<HistoryModel>(async (selectedPerson) =>
-            {
-                await NavigateToDetailedView(selectedPerson);
-            });
+            _navigationService = navigationService;
+            _logger = logger;
 
+            NavigateCommand = ReactiveCommand.CreateFromTask<HistoryModel>(NavigateToDetailedView);
             HistoryItem = new ObservableCollection<HistoryModel>();
 
-            LoadJson();
+            _ = LoadJsonAsync();
         }
 
-        private async void LoadJson()
+        private async Task LoadJsonAsync()
         {
             try
             {
@@ -61,67 +79,43 @@ namespace RefactorApp.Core.ViewModels
                 using var reader = new StreamReader(stream);
                 string json = await reader.ReadToEndAsync();
 
-                Console.WriteLine($"Loaded JSON: {json}");
+                _logger.LogInformation("Loaded JSON: {Json}", json);
 
                 var items = JsonConvert.DeserializeObject<List<HistoryModel>>(json);
-
                 if (items != null)
                 {
                     foreach (var item in items)
                     {
-                        Console.WriteLine($"Adding item: {item.Name}");
+                        _logger.LogInformation("Adding item: {Name}", item.Name);
                         HistoryItem.Add(item);
                     }
                 }
-
-                Console.WriteLine($"Total Items Loaded: {HistoryItem.Count}");
+                _logger.LogInformation("Total Items Loaded: {Count}", HistoryItem.Count);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error loading JSON: {ex.Message}");
+                _logger.LogError(ex, "Error loading JSON");
             }
-        }
-
-        private string _selectedItem;
-        public string SelectedItem
-        {
-            get => Preferences.Get("SelectedItem", null);
-            set
-            {
-                if (value != _selectedItem)
-                {
-                    _selectedItem = value;
-                    Preferences.Set("SelectedItem", value);
-                    OnPropertyChanged(nameof(SelectedItem));
-                }
-            }
-        }
-        public event PropertyChangedEventHandler? PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
         }
 
         private async Task NavigateToDetailedView(HistoryModel selectedPerson)
         {
             if (selectedPerson == null || string.IsNullOrEmpty(selectedPerson.RouteTo))
             {
-                Console.WriteLine("NavigateToDetailedView ERROR: selectedPerson is NULL or missing RouteTo!");
+                _logger.LogWarning("NavigateToDetailedView error: selectedPerson is null or missing RouteTo!");
                 return;
             }
 
-            Console.WriteLine($"Navigating to route: {selectedPerson.RouteTo}");
+            _logger.LogInformation("Navigating to route: {Route}", selectedPerson.RouteTo);
 
             try
             {
-                await Shell.Current.GoToAsync(selectedPerson.RouteTo);
+                await _navigationService.NavigateToAsync(selectedPerson.RouteTo);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Navigation Error: {ex.Message}");
+                _logger.LogError(ex, "Navigation error for route: {Route}", selectedPerson.RouteTo);
             }
-
         }
     }
 }

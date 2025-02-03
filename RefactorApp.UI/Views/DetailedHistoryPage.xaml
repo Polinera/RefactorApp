@@ -8,18 +8,16 @@
     x:TypeArguments="vm:DetailedHistoryViewModel">
     <Grid>
         <VerticalStackLayout>
-            <Label Text="Pokemon Name" />
-            <Label Text="{Binding Name}" 
-                   FontSize="24" 
-                   FontAttributes="Bold" 
-                   HorizontalOptions="Center" />
             <Image Source="{Binding Image}" 
                    HeightRequest="200" 
                    HorizontalOptions="Center" />
-            
-            <Label Text="{Binding Description}" 
-                   FontSize="18" 
+            <Label Text="{Binding Name}" 
+                   Style="{StaticResource Text_Body}"
                    HorizontalOptions="Center" />
+            <Label 
+                Style="{StaticResource Text_Body}"
+                Text="{Binding Description}" 
+                HorizontalOptions="Center" />
         </VerticalStackLayout>
     </Grid>
 </rx:ReactiveContentPage>

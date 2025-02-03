@@ -8,9 +8,18 @@
     Title="RefactorApp">
 
     <TabBar>
-        <ShellContent Title="Home" Route="home" ContentTemplate="{DataTemplate views:HomePage}" />
-        <ShellContent Title="Goal" Route="goal" ContentTemplate="{DataTemplate views:GoalPage}" />
-        <ShellContent Title="History" Route="history" ContentTemplate="{DataTemplate views:HistoryPage}" />
+        <ShellContent 
+        Title="Home" 
+        ContentTemplate="{DataTemplate views:HomePage}" 
+        Route="home" />
+        <ShellContent 
+        Title="Goal" 
+        ContentTemplate="{DataTemplate views:GoalPage}" 
+        Route="goal" />
+        <ShellContent 
+        Title="History" 
+        ContentTemplate="{DataTemplate views:HistoryPage}" 
+        Route="history" />
     </TabBar>
 
 </Shell>
