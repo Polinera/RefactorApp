@@ -4,6 +4,7 @@ using RefactorApp.Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Reactive;
 using System.Text;
@@ -64,7 +65,6 @@ namespace RefactorApp.Core.ViewModels
         #endregion
 
         #region Commands
-
         public ReactiveCommand<Unit, Unit> ToggleAddGoalCommand { get; }
 
         public ReactiveCommand<Unit, Unit> AddGoalCommand { get; }
@@ -237,5 +237,6 @@ namespace RefactorApp.Core.ViewModels
         }
 
         #endregion
+        
     }
 }

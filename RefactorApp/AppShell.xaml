@@ -13,9 +13,9 @@
         ContentTemplate="{DataTemplate views:HomePage}" 
         Route="home" />
         <ShellContent 
-        Title="Goal" 
-        ContentTemplate="{DataTemplate views:GoalPage}" 
-        Route="goal" />
+        Title="Reflections" 
+        ContentTemplate="{DataTemplate views:ReflectionsPage}" 
+        Route="reflections" />
         <ShellContent 
         Title="History" 
         ContentTemplate="{DataTemplate views:HistoryPage}" 

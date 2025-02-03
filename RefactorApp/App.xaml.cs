@@ -1,4 +1,5 @@
 ﻿using RefactorApp.Core.Services;
+using RefactorApp.UI.Views;
 
 namespace RefactorApp
 {
@@ -9,7 +10,5 @@ namespace RefactorApp
             InitializeComponent();
             MainPage = new AppShell();
         }
-
-      
     }
 }

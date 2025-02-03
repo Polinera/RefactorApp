@@ -30,7 +30,7 @@ namespace RefactorApp.Core.ViewModels
         {
             CardModelItem.Add(new CardModelMainPage
             {
-                Title = "Manage Your Goals",
+                Title = "Your Goals",
                 Image = "goalmainimage",
                 RouteTo = "goal",
                 NavigateCommand = NavigateCommand
@@ -43,13 +43,21 @@ namespace RefactorApp.Core.ViewModels
                 RouteTo = "history",
                 NavigateCommand = NavigateCommand
             });
+
+            CardModelItem.Add(new CardModelMainPage
+            {
+                Title = "Reflections",
+                Image = "historymainimage",
+                RouteTo = "reflections",
+                NavigateCommand = NavigateCommand
+            });
         }
 
         public async Task NavigateToPage(string routeTo)
         {
             if (string.IsNullOrEmpty(routeTo)) return;
 
-            await Shell.Current.GoToAsync($"//{routeTo}");
+            await Shell.Current.GoToAsync($"{routeTo}");
         }
     }
 }

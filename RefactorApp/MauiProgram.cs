@@ -25,13 +25,20 @@ namespace RefactorApp
             builder.Services.AddSingleton<INavigationFlowService, NavigationFlowService>();
 
             builder.Services.AddTransient<HomePage>();
-            builder.Services.AddTransient<HomeViewModel>();
+            builder.Services.AddTransient<DetailedHistoryPage>();
             builder.Services.AddTransient<GoalPage>();
             builder.Services.AddTransient<HistoryPage>();
+            builder.Services.AddTransient<JournalPage>();
+            builder.Services.AddTransient<ReflectionsPage>();
+            builder.Services.AddTransient<OnboardingPage>();
+
+            builder.Services.AddTransient<HomeViewModel>();
             builder.Services.AddTransient<GoalViewModel>();
             builder.Services.AddTransient<HistoryViewModel>();
-            builder.Services.AddTransient<DetailedHistoryPage>();
             builder.Services.AddTransient<DetailedHistoryViewModel>();
+            builder.Services.AddTransient<JournalViewModel>();
+            builder.Services.AddTransient<ReflectionsViewModel>();
+            builder.Services.AddTransient<OnboardingViewModel>();
 
             var app = builder.Build();
            

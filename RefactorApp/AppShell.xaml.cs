@@ -9,9 +9,11 @@ namespace RefactorApp
             InitializeComponent();
 
             Routing.RegisterRoute("home", typeof(HomePage));
+            Routing.RegisterRoute("onboarding", typeof(OnboardingPage));
             Routing.RegisterRoute("goal", typeof(GoalPage));
             Routing.RegisterRoute("history", typeof(HistoryPage));
             Routing.RegisterRoute("journal", typeof(JournalPage));
+            Routing.RegisterRoute("reflections", typeof(ReflectionsPage));
             Routing.RegisterRoute("detailedHistoryView", typeof(DetailedHistoryPage));
             Routing.RegisterRoute("detailedHistoryView/MarieCurie", typeof(DetailedHistoryPage));
             Routing.RegisterRoute("detailedHistoryView/AdaLovelace", typeof(DetailedHistoryPage)); 
@@ -23,7 +25,6 @@ namespace RefactorApp
             Routing.RegisterRoute("detailedHistoryView/RosaParks", typeof(DetailedHistoryPage));
             Routing.RegisterRoute("detailedHistoryView/StephenHawking", typeof(DetailedHistoryPage));
             Routing.RegisterRoute("detailedHistoryView/AmeliaEarhart", typeof(DetailedHistoryPage));
-            Routing.RegisterRoute("detailedHistoryView/NelsonMandela", typeof(DetailedHistoryPage));
             Routing.RegisterRoute("detailedHistoryView/MahatmaGandhi", typeof(DetailedHistoryPage));
             Routing.RegisterRoute("detailedHistoryView/KatherineJohnson", typeof(DetailedHistoryPage));
             Routing.RegisterRoute("detailedHistoryView/HelenKeller", typeof(DetailedHistoryPage));
@@ -31,7 +32,15 @@ namespace RefactorApp
             Routing.RegisterRoute("detailedHistoryView/JaneGoodall", typeof(DetailedHistoryPage));
 
         }
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
 
-
+            bool isFirstTimeUser = Preferences.Get("IsFirstTimeUser", true);
+            if (isFirstTimeUser)
+            {
+                await Shell.Current.GoToAsync("onboarding");
+            }
+        }
     }
 }
