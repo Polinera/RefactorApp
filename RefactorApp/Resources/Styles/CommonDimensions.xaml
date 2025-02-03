@@ -20,9 +20,6 @@
                Bottom="{StaticResource Spacing_m}"
                Top="{StaticResource Spacing_m}"/>
 
-
-
-
     <x:Double x:Key="Entry_Size">48</x:Double>
     <x:Double x:Key="Entry_MinimumHeightRequest">48</x:Double>
     <x:Double x:Key="Entry_MinimumWidthRequest">320</x:Double>
@@ -31,8 +28,6 @@
     <x:Double x:Key="Border_WidthRequest">150</x:Double>
 
     <x:Double x:Key="Image_WidthRequest">100</x:Double>
-
-
 
     <x:Int32 x:Key="CornerRadius_Entry">6</x:Int32>
 

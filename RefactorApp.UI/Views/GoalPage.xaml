@@ -34,17 +34,17 @@
 
         <HorizontalStackLayout Spacing="10">
             <Button 
-                Style="{StaticResource ButtonGoalStyle}"
+                Style="{StaticResource SmallButtonGoalStyle}"
                 Text="All" 
                 Command="{Binding SetFilterCommand}" 
                 CommandParameter="All" />
             <Button 
-                Style="{StaticResource ButtonGoalStyle}"
+                Style="{StaticResource SmallButtonGoalStyle}"
                 Text="Ongoing" 
                 Command="{Binding SetFilterCommand}" 
                 CommandParameter="Ongoing" />
             <Button 
-                Style="{StaticResource ButtonGoalStyle}"
+                Style="{StaticResource SmallButtonGoalStyle}"
                 Text="Completed" 
                 Command="{Binding SetFilterCommand}" 
                 CommandParameter="Completed" />

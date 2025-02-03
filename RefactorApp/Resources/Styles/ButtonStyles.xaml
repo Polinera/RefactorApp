@@ -58,6 +58,14 @@
     </Style>
     
     <Style
+        x:Key="SmallButtonGoalStyle"
+        BasedOn="{StaticResource ButtonGoalStyle}"
+        TargetType="Button">
+        <Setter Property="MaximumWidthRequest" Value="100" />
+       
+    </Style>
+    
+    <Style
         x:Key="ButtonPrimaryStyle"
         BasedOn="{StaticResource ButtonBaseStyle}"
         TargetType="Button">

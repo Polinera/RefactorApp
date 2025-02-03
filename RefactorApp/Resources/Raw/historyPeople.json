@@ -3,90 +3,90 @@
     "Name": "Marie Curie",
     "Description": "Pioneer in radioactivity research.",
     "Image": "history/mariecurieimage.jpg",
-    "RouteTo": "DetailedHistoryView/MarieCurie"
+    "RouteTo": "detailedHistoryView/MarieCurie"
   },
   {
     "Name": "Ada Lovelace",
     "Description": "Mathematician, considered the first programmer.",
     "Image": "history/adalovelace.jpg",
-    "RouteTo": "DetailedHistoryView/AdaLovelace"
+    "RouteTo": "detailedHistoryView/AdaLovelace"
   },
   {
     "Name": "Nelson Mandela",
     "Description": "Anti-apartheid revolutionary and former President of South Africa.",
     "Image": "history/nelsonmandela.jpg",
-    "RouteTo": "DetailedHistoryView/NelsonMandela"
+    "RouteTo": "detailedHistoryView/NelsonMandela"
   },
   {
     "Name": "Albert Einstein",
     "Description": "Theoretical physicist who developed the theory of relativity.",
     "Image": "history/alberteinstein.jpg",
-    "RouteTo": "DetailedHistoryView/AlbertEinstein"
+    "RouteTo": "detailedHistoryView/AlbertEinstein"
   },
   {
     "Name": "Frida Kahlo",
     "Description": "Iconic Mexican artist known for her surreal self-portraits.",
     "Image": "history/fridakahlo.jpg",
-    "RouteTo": "DetailedHistoryView/FridaKahlo"
+    "RouteTo": "detailedHistoryView/FridaKahlo"
   },
   {
     "Name": "Malala Yousafzai",
     "Description": "Nobel Prize laureate and activist for girls' education.",
     "Image": "history/malala.jpg",
-    "RouteTo": "DetailedHistoryView/MalalaYousafzai"
+    "RouteTo": "detailedHistoryView/MalalaYousafzai"
   },
   {
     "Name": "Leonardo da Vinci",
     "Description": "Renaissance genius known for art, science, and invention.",
     "Image": "history/leonardodavinci.jpg",
-    "RouteTo": "DetailedHistoryView/LeonardoDaVinci"
+    "RouteTo": "detailedHistoryView/LeonardoDaVinci"
   },
   {
     "Name": "Rosa Parks",
     "Description": "Civil rights activist known for the Montgomery Bus Boycott.",
     "Image": "history/rosaparks.jpg",
-    "RouteTo": "DetailedHistoryView/RosaParks"
+    "RouteTo": "detailedHistoryView/RosaParks"
   },
   {
     "Name": "Stephen Hawking",
     "Description": "Renowned theoretical physicist and cosmologist.",
     "Image": "history/stephenhawking.jpg",
-    "RouteTo": "DetailedHistoryView/StephenHawking"
+    "RouteTo": "detailedHistoryView/StephenHawking"
   },
   {
     "Name": "Amelia Earhart",
     "Description": "Aviation pioneer and first woman to fly solo across the Atlantic.",
     "Image": "history/ameliaearhart.jpg",
-    "RouteTo": "DetailedHistoryView/AmeliaEarhart"
+    "RouteTo": "detailedHistoryView/AmeliaEarhart"
   },
   {
     "Name": "Mahatma Gandhi",
     "Description": "Leader of the Indian independence movement through non-violent civil disobedience.",
     "Image": "history/mahatmagandhi.jpg",
-    "RouteTo": "DetailedHistoryView/MahatmaGandhi"
+    "RouteTo": "detailedHistoryView/MahatmaGandhi"
   },
   {
     "Name": "Katherine Johnson",
     "Description": "NASA mathematician whose calculations helped land astronauts on the moon.",
     "Image": "history/katherinejohnson.jpg",
-    "RouteTo": "DetailedHistoryView/KatherineJohnson"
+    "RouteTo": "detailedHistoryView/KatherineJohnson"
   },
   {
     "Name": "Helen Keller",
     "Description": "Author and activist who overcame the challenges of being deaf and blind.",
     "Image": "history/helenkeller.jpg",
-    "RouteTo": "DetailedHistoryView/HelenKeller"
+    "RouteTo": "detailedHistoryView/HelenKeller"
   },
   {
     "Name": "Steve Jobs",
     "Description": "Visionary entrepreneur and co-founder of Apple Inc.",
     "Image": "history/stevejobs.jpg",
-    "RouteTo": "DetailedHistoryView/SteveJobs"
+    "RouteTo": "detailedHistoryView/SteveJobs"
   },
   {
     "Name": "Jane Goodall",
     "Description": "Primatologist known for her groundbreaking work with chimpanzees.",
     "Image": "history/janegoodall.jpg",
-    "RouteTo": "DetailedHistoryView/JaneGoodall"
+    "RouteTo": "detailedHistoryView/JaneGoodall"
   }
 ]
