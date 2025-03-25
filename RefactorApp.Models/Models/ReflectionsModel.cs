@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace RefactorApp.Models.Models
 {
-    public class CardModelMainPage:ReactiveObject
+    public class ReflectionsModel:ReactiveObject
     {
         private string _title;
-        private string _image;
         private string _routeTo;
         private ReactiveCommand<string, Unit> _navigateCommand;
 
@@ -19,12 +18,6 @@ namespace RefactorApp.Models.Models
         {
             get => _title;
             set => this.RaiseAndSetIfChanged(ref _title, value);
-        }
-
-        public string Image
-        {
-            get => _image;
-            set => this.RaiseAndSetIfChanged(ref _image, value);
         }
 
         public string RouteTo

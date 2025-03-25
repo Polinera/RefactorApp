@@ -14,6 +14,7 @@ namespace RefactorApp
             Routing.RegisterRoute("history", typeof(HistoryPage));
             Routing.RegisterRoute("journal", typeof(JournalPage));
             Routing.RegisterRoute("reflections", typeof(ReflectionsPage));
+            Routing.RegisterRoute("moodTracker", typeof(MoodTrackerPage));
             Routing.RegisterRoute("detailedHistoryView", typeof(DetailedHistoryPage));
             Routing.RegisterRoute("detailedHistoryView/MarieCurie", typeof(DetailedHistoryPage));
             Routing.RegisterRoute("detailedHistoryView/AdaLovelace", typeof(DetailedHistoryPage)); 

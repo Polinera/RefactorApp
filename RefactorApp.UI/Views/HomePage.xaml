@@ -17,15 +17,23 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-
-            <Label 
-                Text="Welcome to SelfRefactor!" 
-                Style="{StaticResource Text_Large_Title}"                 
-                HorizontalOptions="Center" 
+            <Border 
+                Style="{StaticResource MainPageQuoteStyle}"
                 Grid.Row="0" 
                 Grid.Column="0" 
-                Grid.ColumnSpan="2" />
-
+                Grid.ColumnSpan="2">
+                <VerticalStackLayout Spacing="4" Padding="10">
+                    <Label 
+            Text="{Binding FirstQuote.Quote}" 
+            />
+                    <Label 
+            Text="{Binding FirstQuote.Author}" 
+          
+            HorizontalTextAlignment="Center"
+            />
+                </VerticalStackLayout>
+            </Border>
+       
             <CollectionView 
                 Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                 ItemsSource="{Binding CardModelItem}">

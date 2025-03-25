@@ -22,7 +22,6 @@ namespace RefactorApp
     		builder.Logging.AddDebug();    
 #endif
             builder.Services.AddSingleton<INavigationService, NavigationService>();
-            builder.Services.AddSingleton<INavigationFlowService, NavigationFlowService>();
 
             builder.Services.AddTransient<HomePage>();
             builder.Services.AddTransient<DetailedHistoryPage>();
@@ -31,6 +30,7 @@ namespace RefactorApp
             builder.Services.AddTransient<JournalPage>();
             builder.Services.AddTransient<ReflectionsPage>();
             builder.Services.AddTransient<OnboardingPage>();
+            builder.Services.AddTransient<MoodTrackerPage>();
 
             builder.Services.AddTransient<HomeViewModel>();
             builder.Services.AddTransient<GoalViewModel>();
@@ -39,6 +39,7 @@ namespace RefactorApp
             builder.Services.AddTransient<JournalViewModel>();
             builder.Services.AddTransient<ReflectionsViewModel>();
             builder.Services.AddTransient<OnboardingViewModel>();
+            builder.Services.AddTransient<MoodTrackerViewModel>();
 
             var app = builder.Build();
            

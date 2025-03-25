@@ -59,11 +59,23 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\History\adalovelace.jpg" />
+	  <None Remove="Resources\Images\History\alberteinsteinimage.jpg" />
+	  <None Remove="Resources\Images\History\fridakahlo.jpg" />
+	  <None Remove="Resources\Images\History\leonardodavinci.jpg" />
+	  <None Remove="Resources\Images\History\malala.jpg" />
 	  <None Remove="Resources\Images\History\mariecurieimage.jpg" />
+	  <None Remove="Resources\Images\History\nelsonmandela.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiImage Include="Resources\Images\History\adalovelace.jpg" />
+	  <MauiImage Include="Resources\Images\History\alberteinsteinimage.jpg" />
+	  <MauiImage Include="Resources\Images\History\fridakahlo.jpg" />
+	  <MauiImage Include="Resources\Images\History\leonardodavinci.jpg" />
+	  <MauiImage Include="Resources\Images\History\malala.jpg" />
 	  <MauiImage Include="Resources\Images\History\mariecurieimage.jpg" />
+	  <MauiImage Include="Resources\Images\History\nelsonmandela.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>

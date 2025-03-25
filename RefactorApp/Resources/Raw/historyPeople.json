@@ -20,7 +20,7 @@
   {
     "Name": "Albert Einstein",
     "Description": "Theoretical physicist who developed the theory of relativity.",
-    "Image": "history/alberteinstein.jpg",
+    "Image": "history/alberteinsteinimage.jpg",
     "RouteTo": "detailedHistoryView/AlbertEinstein"
   },
   {
