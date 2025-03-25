@@ -24,14 +24,14 @@ namespace RefactorApp.Core.ViewModels
 
         public ReactiveCommand<string, Unit> NavigateCommand { get; }
 
-        public ObservableCollection<CardModelMainPage> CardModelItem { get; }
+        public ObservableCollection<HabitsModel> HabitModelItem { get; }
         public ObservableCollection<QuoteModel> QuoteModelItem { get; }
 
         public HomeViewModel()
         {
             NavigateCommand = ReactiveCommand.CreateFromTask<string>(NavigateToPage);
 
-            CardModelItem = new ObservableCollection<CardModelMainPage>();
+            HabitModelItem = new ObservableCollection<HabitsModel>();
             QuoteModelItem = new ObservableCollection<QuoteModel>();
 
             FirstQuote = new QuoteModel
@@ -46,29 +46,38 @@ namespace RefactorApp.Core.ViewModels
 
         private void AddEntryToModel()
         {
-            CardModelItem.Add(new CardModelMainPage
+            HabitModelItem.Add(new HabitsModel
             {
-                Title = "Your Goals",
-                Image = "goalmainimage",
-                RouteTo = "goal",
-                NavigateCommand = NavigateCommand
+                HabitName = "Exercise",
+                IsCompleted = false
+            });
+            HabitModelItem.Add(new HabitsModel
+            {
+                HabitName = "Drink water",
+                IsCompleted = false
+            });
+            HabitModelItem.Add(new HabitsModel
+            {
+                HabitName = "Read book",
+                IsCompleted = false
+            });
+            HabitModelItem.Add(new HabitsModel
+            {
+                HabitName = "Exercise",
+                IsCompleted = false
+            });
+            HabitModelItem.Add(new HabitsModel
+            {
+                HabitName = "Drink water",
+                IsCompleted = false
+            });
+            HabitModelItem.Add(new HabitsModel
+            {
+                HabitName = "Read book",
+                IsCompleted = false
             });
 
-            CardModelItem.Add(new CardModelMainPage
-            {
-                Title = "History Overview",
-                Image = "historymainimage",
-                RouteTo = "history",
-                NavigateCommand = NavigateCommand
-            });
 
-            CardModelItem.Add(new CardModelMainPage
-            {
-                Title = "Reflections",
-                Image = "historymainimage",
-                RouteTo = "reflections",
-                NavigateCommand = NavigateCommand
-            });
         }
 
         public async Task NavigateToPage(string routeTo)

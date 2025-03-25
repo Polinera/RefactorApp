@@ -55,7 +55,7 @@
         <Setter Property="FontSize" Value="{StaticResource Body}"/>
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextColorSecondaryLight}, Dark={StaticResource TextColorSecondaryDark}}"/>
     </Style>
-
+   
     <Style
         x:Key="Text_Button"
         TargetType="Button">

@@ -35,3 +35,28 @@
         </CollectionView>
     </VerticalStackLayout>
 </rx:ReactiveContentPage>
+
+<!--<CollectionView 
+                Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                ItemsSource="{Binding CardModelItem}">
+    <CollectionView.ItemsLayout>
+        <GridItemsLayout Orientation="Vertical" Span="2" />
+    </CollectionView.ItemsLayout>
+
+    <CollectionView.ItemTemplate>
+        <DataTemplate>
+            <Border Style="{StaticResource MainPageCardStyle}">
+                <VerticalStackLayout Padding="10">
+                    <Image 
+                            Source="{Binding Image}" 
+                            
+                            Aspect="AspectFill" />
+                    <Button Style="{StaticResource ButtonPrimaryStyle}"
+                            Text="{Binding Title}" 
+                            Command="{Binding NavigateCommand}"
+                            CommandParameter="{Binding RouteTo}" />
+                </VerticalStackLayout>
+            </Border>
+        </DataTemplate>
+    </CollectionView.ItemTemplate>
+</CollectionView>-->

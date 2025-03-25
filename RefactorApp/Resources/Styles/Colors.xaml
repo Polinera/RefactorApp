@@ -7,11 +7,11 @@
     <!-- Note: For Android please see also Platforms\Android\Resources\values\colors.xml -->
 
     <Color x:Key="BackgroundColorLight">#FAF3E7</Color>
-    <Color x:Key="PrimaryColorLight">#D5C6A8</Color>
-    <Color x:Key="SecondaryColorLight">#F5B895</Color>
-    <Color x:Key="TextColorPrimaryLight">#4A4031</Color>
+    <Color x:Key="PrimaryColorLight">#F2D3C1</Color>
+    <Color x:Key="SecondaryColorLight">#F0EEEB</Color>
+    <Color x:Key="TextColorPrimaryLight">#000000</Color>
     <Color x:Key="TextColorSecondaryLight">#5e5e5e</Color>
-    <Color x:Key="InteractiveColorLight">#FFE3C2</Color>
+    <Color x:Key="InteractiveColorLight">#A9B67F</Color>
     <Color x:Key="Primary_Button_Text_Light_Color">#4A4031</Color>
     <Color x:Key="Secondary_Button_Text_Light_Color">#4A4031</Color>
     <Color x:Key="Primary_Button_BacgroundColor_Light_Color">#8C6B5B</Color>

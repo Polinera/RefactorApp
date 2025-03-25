@@ -16,7 +16,17 @@
             <RoundRectangle CornerRadius="20"/>
         </Setter>
         <Setter Property="Padding" Value="{StaticResource Conteiner_Padding}" />
-        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="StrokeThickness" Value="0" />
+    </Style>
+    <Style x:Key="MainPageHabitsStyle"
+		   TargetType="Border">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource SecondaryColorLight}, Dark={StaticResource SecondaryColorDark}}" />
+        <Setter Property="Stroke" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}" />
+        <Setter Property="StrokeShape">
+            <RoundRectangle CornerRadius="20"/>
+        </Setter>
+        <Setter Property="Padding" Value="{StaticResource Conteiner_Padding}" />
+        <Setter Property="StrokeThickness" Value="0" />
     </Style>
 
     <Style x:Key="MainPageCardStyle"

@@ -6,8 +6,9 @@
                         xmlns:rx="clr-namespace:ReactiveUI.Maui;assembly=ReactiveUI.Maui"
                         x:TypeArguments="vm:HomeViewModel">
     <ScrollView>
-        <Grid ColumnSpacing="10" RowSpacing="10" Padding="10">
+        <Grid RowSpacing="10" Padding="10">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
@@ -16,48 +17,84 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Border 
                 Style="{StaticResource MainPageQuoteStyle}"
                 Grid.Row="0" 
                 Grid.Column="0" 
-                Grid.ColumnSpan="2">
+                Grid.ColumnSpan="3">
                 <VerticalStackLayout Spacing="4" Padding="10">
                     <Label 
+                        
             Text="{Binding FirstQuote.Quote}" 
-            />
+                        Style="{StaticResource Text_Body}" />
+
                     <Label 
             Text="{Binding FirstQuote.Author}" 
-          
-            HorizontalTextAlignment="Center"
-            />
+            HorizontalTextAlignment="Center" />
                 </VerticalStackLayout>
             </Border>
-       
-            <CollectionView 
-                Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-                ItemsSource="{Binding CardModelItem}">
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical" Span="2" />
-                </CollectionView.ItemsLayout>
+            
+            <Label Grid.Row="1" 
+                   Grid.ColumnSpan="3"
+                   Margin="0,20,0,0"
+                   HorizontalOptions="Center"
+           Text="Mood diary" />
+            
+            <Label Grid.Row="2"
+                   Grid.ColumnSpan="3"
+                   Text="Top emotions" 
+                   HorizontalOptions="Center" />
 
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Border Style="{StaticResource MainPageCardStyle}">
-                            <VerticalStackLayout Padding="10">
-                                <Image 
-                            Source="{Binding Image}" 
-                            
-                            Aspect="AspectFill" />
-                                <Button Style="{StaticResource ButtonPrimaryStyle}"
-                            Text="{Binding Title}" 
-                            Command="{Binding NavigateCommand}"
-                            CommandParameter="{Binding RouteTo}" />
-                            </VerticalStackLayout>
-                        </Border>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+            
+                <Label 
+                    Padding="20,0,0,0"
+                    Grid.Row="3"
+                Grid.Column="0"
+                    FontSize="50"
+                    Text="😊" />
+
+
+            <Label Text="🤔"
+                   Padding="10,0,0,0"
+                       Grid.Row="3"
+                Grid.Column="1"
+                       FontSize="50"/>
+            
+            <Label Text="😴"
+                       Grid.Row="3"
+                Grid.Column="2"
+                       FontSize="50"/>
+
+            <Label Grid.Row="4"
+                   Grid.ColumnSpan="3"
+                   Margin="0,20,0,0"
+                   HorizontalOptions="Center"
+                   Text="Habits" />
+
+            <StackLayout Grid.Row="5"
+                       Grid.ColumnSpan="3">
+                <CollectionView
+                        ItemsSource="{Binding HabitModelItem}">
+                    <CollectionView.ItemsLayout>
+
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border 
+                                    Margin="10"
+                       HeightRequest="60"
+                       Style="{StaticResource MainPageHabitsStyle}" >
+                                <Label Text="{Binding HabitName}" />
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
         </Grid>
     </ScrollView>
 </rx:ReactiveContentPage>
