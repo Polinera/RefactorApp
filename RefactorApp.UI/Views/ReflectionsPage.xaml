@@ -7,13 +7,7 @@
                         x:TypeArguments="vm:ReflectionsViewModel">
     
     <VerticalStackLayout>
-        <Border>
-            <VerticalStackLayout>
-                <Label Text="you can manages your goals" />
-                <Label Text="track your mood" />
-                <Label Text="journal" />
-            </VerticalStackLayout>
-        </Border>
+        
         <CollectionView 
                 Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                 ItemsSource="{Binding ReflectionsModelsItem}">
@@ -25,7 +19,8 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <VerticalStackLayout Padding="10">
-                        <Button Style="{StaticResource ButtonPrimaryStyle}"
+                        <Button Style="{StaticResource ButtonReflectionStyle}"
+                               
                             Text="{Binding Title}" 
                             Command="{Binding NavigateCommand}"
                             CommandParameter="{Binding RouteTo}" />
@@ -33,30 +28,10 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <Border Style="{StaticResource JournalStyle}"
+               HeightRequest="300">
+            <Label Text="Journal" />
+        </Border>
     </VerticalStackLayout>
 </rx:ReactiveContentPage>
 
-<!--<CollectionView 
-                Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-                ItemsSource="{Binding CardModelItem}">
-    <CollectionView.ItemsLayout>
-        <GridItemsLayout Orientation="Vertical" Span="2" />
-    </CollectionView.ItemsLayout>
-
-    <CollectionView.ItemTemplate>
-        <DataTemplate>
-            <Border Style="{StaticResource MainPageCardStyle}">
-                <VerticalStackLayout Padding="10">
-                    <Image 
-                            Source="{Binding Image}" 
-                            
-                            Aspect="AspectFill" />
-                    <Button Style="{StaticResource ButtonPrimaryStyle}"
-                            Text="{Binding Title}" 
-                            Command="{Binding NavigateCommand}"
-                            CommandParameter="{Binding RouteTo}" />
-                </VerticalStackLayout>
-            </Border>
-        </DataTemplate>
-    </CollectionView.ItemTemplate>
-</CollectionView>-->

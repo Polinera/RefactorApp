@@ -32,19 +32,19 @@ namespace RefactorApp.Core.ViewModels
         {
             ReflectionsModelsItem.Add(new ReflectionsModel
             {
-                Title = "Manage your goals",
+                Title = "Manage goals",
                 RouteTo = "goal",
                 NavigateCommand = NavigateCommand
             });
             ReflectionsModelsItem.Add(new ReflectionsModel
             {
-                Title = "Track your mood",
+                Title = "Your mood",
                 RouteTo = "moodTracker",
                 NavigateCommand = NavigateCommand
             });
             ReflectionsModelsItem.Add(new ReflectionsModel
             {
-                Title = "Journal for you",
+                Title = "Journal",
                 RouteTo = "journal",
                 NavigateCommand = NavigateCommand
             });
