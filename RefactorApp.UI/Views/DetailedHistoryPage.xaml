@@ -6,18 +6,9 @@
     xmlns:vm="clr-namespace:RefactorApp.Core.ViewModels;assembly=RefactorApp.Core"
     xmlns:rx="clr-namespace:ReactiveUI.Maui;assembly=ReactiveUI.Maui"
     x:TypeArguments="vm:DetailedHistoryViewModel">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-            <Button 
-            Text="Back" 
-            Command="{Binding NavigateBackCommand}" 
-            Grid.Row="0" />
+   
         <VerticalStackLayout>
             <Image Source="{Binding Image}" 
-                   Grid.Row="1"
                    HeightRequest="200" 
                    HorizontalOptions="Center" />
             <Label Text="{Binding Name}" 
@@ -28,5 +19,5 @@
                 Text="{Binding Description}" 
                 HorizontalOptions="Center" />
         </VerticalStackLayout>
-    </Grid>
+   
 </rx:ReactiveContentPage>

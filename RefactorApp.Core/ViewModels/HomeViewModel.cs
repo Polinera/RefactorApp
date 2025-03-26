@@ -14,6 +14,7 @@ namespace RefactorApp.Core.ViewModels
 {
     public class HomeViewModel : ReactiveObject
     {
+        public ReactiveCommand<HabitsModel, Unit> ToggleHabitCommand { get; }
         private QuoteModel _firstQuote;
         public QuoteModel FirstQuote
         {
@@ -29,55 +30,32 @@ namespace RefactorApp.Core.ViewModels
 
         public HomeViewModel()
         {
+            
+            
+
             NavigateCommand = ReactiveCommand.CreateFromTask<string>(NavigateToPage);
+
+            ToggleHabitCommand = ReactiveCommand.Create<HabitsModel>(habit =>
+            {
+                if (habit != null)
+                {
+                    habit.IsCompleted = !habit.IsCompleted;
+                    
+                    this.RaisePropertyChanged(nameof(HabitModelItem));
+                }
+            });
 
             HabitModelItem = new ObservableCollection<HabitsModel>();
             QuoteModelItem = new ObservableCollection<QuoteModel>();
 
-            FirstQuote = new QuoteModel
-            {
-                Quote = "sss",
-                Author = "Ssss"
-            };
-
-            AddEntryToModel();
+            LoadHabitsFromJson();
             LoadQuotesFromJson();
-        }
 
-        private void AddEntryToModel()
-        {
-            HabitModelItem.Add(new HabitsModel
+            Console.WriteLine("Loaded habits:");
+            foreach (var habit in HabitModelItem)
             {
-                HabitName = "Exercise",
-                IsCompleted = false
-            });
-            HabitModelItem.Add(new HabitsModel
-            {
-                HabitName = "Drink water",
-                IsCompleted = false
-            });
-            HabitModelItem.Add(new HabitsModel
-            {
-                HabitName = "Read book",
-                IsCompleted = false
-            });
-            HabitModelItem.Add(new HabitsModel
-            {
-                HabitName = "Exercise",
-                IsCompleted = false
-            });
-            HabitModelItem.Add(new HabitsModel
-            {
-                HabitName = "Drink water",
-                IsCompleted = false
-            });
-            HabitModelItem.Add(new HabitsModel
-            {
-                HabitName = "Read book",
-                IsCompleted = false
-            });
-
-
+                Console.WriteLine($"Habit: {habit.Name}");
+            }
         }
 
         public async Task NavigateToPage(string routeTo)
@@ -85,6 +63,27 @@ namespace RefactorApp.Core.ViewModels
             if (string.IsNullOrEmpty(routeTo)) return;
 
             await Shell.Current.GoToAsync($"{routeTo}");
+        }
+
+        private async Task LoadHabitsFromJson()
+        {
+            try
+            {
+                using var stream = await FileSystem.OpenAppPackageFileAsync("habits.json");
+                using var reader = new StreamReader(stream);
+                string jsonContent = await reader.ReadToEndAsync();
+
+                var habits = JsonConvert.DeserializeObject<List<HabitsModel>>(jsonContent);
+                if (habits != null && habits.Any())
+                {
+                    foreach (var habit in habits)
+                        HabitModelItem.Add(habit);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to load habits: {ex.Message}");
+            }
         }
 
         private async Task LoadQuotesFromJson()

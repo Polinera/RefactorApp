@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<rx:ReactiveContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"             
+<rx:ReactiveContentPage  x:Name="HomePa"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"             
                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                         x:Class="RefactorApp.UI.Views.HomePage"
                         xmlns:vm="clr-namespace:RefactorApp.Core.ViewModels;assembly=RefactorApp.Core"
                         xmlns:rx="clr-namespace:ReactiveUI.Maui;assembly=ReactiveUI.Maui"
+                        xmlns:models="clr-namespace:RefactorApp.Models.Models;assembly=RefactorApp.Models"
                         x:TypeArguments="vm:HomeViewModel">
     <ScrollView>
         <Grid RowSpacing="10" Padding="10">
@@ -37,20 +39,20 @@
             HorizontalTextAlignment="Center" />
                 </VerticalStackLayout>
             </Border>
-            
+
             <Label Grid.Row="1" 
                    Grid.ColumnSpan="3"
                    Margin="0,20,0,0"
                    HorizontalOptions="Center"
            Text="Mood diary" />
-            
+
             <Label Grid.Row="2"
                    Grid.ColumnSpan="3"
                    Text="Top emotions" 
                    HorizontalOptions="Center" />
 
-            
-                <Label 
+
+            <Label 
                     Padding="20,0,0,0"
                     Grid.Row="3"
                 Grid.Column="0"
@@ -63,7 +65,7 @@
                        Grid.Row="3"
                 Grid.Column="1"
                        FontSize="50"/>
-            
+
             <Label Text="😴"
                        Grid.Row="3"
                 Grid.Column="2"
@@ -84,13 +86,25 @@
                     </CollectionView.ItemsLayout>
 
                     <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Border 
-                                    Margin="10"
-                       HeightRequest="60"
-                       Style="{StaticResource MainPageHabitsStyle}" >
-                                <Label Text="{Binding HabitName}" />
-                            </Border>
+                        <DataTemplate x:DataType="models:HabitsModel">
+                            <Button
+    Margin="10"
+    HeightRequest="60"
+    Text="{Binding Name, FallbackValue='[No Name Found]'}"
+                                
+    Command="{Binding Source={x:Reference HomePa}, Path=BindingContext.ToggleHabitCommand}"
+                                CommandParameter="{Binding .}">
+                                <Button.Triggers>
+                                    <DataTrigger TargetType="Button" Binding="{Binding IsCompleted}" Value="True">
+                                        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Primary_Button_Text_Light_Color}, Dark={StaticResource Primary_Button_Text_Dark_Color}}" />
+                                        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource InteractiveColorLight}, Dark={StaticResource InteractiveColorDark}}" />
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Button" Binding="{Binding IsCompleted}" Value="False">
+                                        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Primary_Button_Text_Light_Color}, Dark={StaticResource Primary_Button_Text_Dark_Color}}" />
+                                        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource SecondaryColorLight}, Dark={StaticResource SecondaryColorDark}}" />
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>

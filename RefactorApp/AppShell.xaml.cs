@@ -31,6 +31,7 @@ namespace RefactorApp
             Routing.RegisterRoute("detailedHistoryView/HelenKeller", typeof(DetailedHistoryPage));
             Routing.RegisterRoute("detailedHistoryView/SteveJobs", typeof(DetailedHistoryPage));
             Routing.RegisterRoute("detailedHistoryView/JaneGoodall", typeof(DetailedHistoryPage));
+            Routing.RegisterRoute("inspiring", typeof(InspiringView));
 
         }
         protected override async void OnAppearing()

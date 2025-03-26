@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Exercise",
+    "isCompleted": false
+  },
+  {
+    "name": "Read",
+    "isCompleted": false
+  },
+  {
+    "name": "Meditate",
+    "isCompleted": false
+  },
+  {
+    "name": "Journal",
+    "isCompleted": false
+  },
+  {
+    "name": "Drink Water",
+    "isCompleted": false
+  }
+]

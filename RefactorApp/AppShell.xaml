@@ -17,9 +17,9 @@
         ContentTemplate="{DataTemplate views:ReflectionsPage}" 
         Route="reflections" />
         <ShellContent 
-        Title="History" 
-        ContentTemplate="{DataTemplate views:HistoryPage}" 
-        Route="history" />
+        Title="Inspiring" 
+        ContentTemplate="{DataTemplate views:InspiringView}" 
+        Route="inspiring" />
     </TabBar>
 
 </Shell>

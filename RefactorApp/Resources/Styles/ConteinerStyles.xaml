@@ -42,9 +42,9 @@
 		<Setter Property="HeightRequest" Value="{StaticResource Border_HeightRequest}" />
 	</Style>
 
-	<Style x:Key="HistryCardStyle"
+	<Style x:Key="HistoryCardStyle"
 		   TargetType="Border">
-		<Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource PrimaryColorLight}, Dark={StaticResource PrimaryColorDark}}" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource SecondaryColorLight}, Dark={StaticResource SecondaryColorDark}}" />
 		<Setter Property="Stroke" Value="{AppThemeBinding Light={StaticResource PrimaryColorLight}, Dark={StaticResource PrimaryColorDark}}" />
 		<Setter Property="StrokeShape">
 			<RoundRectangle CornerRadius="20"/>

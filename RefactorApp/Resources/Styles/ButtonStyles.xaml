@@ -13,6 +13,7 @@
     <Style
        x:Key="ButtonBaseStyle"
        TargetType="Button">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Primary_Button_Text_Light_Color}, Dark={StaticResource Primary_Button_Text_Dark_Color}}" />
         <Setter Property="CornerRadius" Value="100" />
         <Setter Property="HeightRequest" Value="{StaticResource Button_Size}" />
         <Setter Property="MinimumHeightRequest" Value="{StaticResource Button_MinimumHeightRequest}" />

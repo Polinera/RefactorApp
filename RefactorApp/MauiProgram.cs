@@ -31,6 +31,7 @@ namespace RefactorApp
             builder.Services.AddTransient<ReflectionsPage>();
             builder.Services.AddTransient<OnboardingPage>();
             builder.Services.AddTransient<MoodTrackerPage>();
+            builder.Services.AddTransient<InspiringView>();
 
             builder.Services.AddTransient<HomeViewModel>();
             builder.Services.AddTransient<GoalViewModel>();
@@ -40,6 +41,7 @@ namespace RefactorApp
             builder.Services.AddTransient<ReflectionsViewModel>();
             builder.Services.AddTransient<OnboardingViewModel>();
             builder.Services.AddTransient<MoodTrackerViewModel>();
+            builder.Services.AddTransient<InspiringViewModel>();
 
             var app = builder.Build();
            
