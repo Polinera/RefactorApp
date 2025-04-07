@@ -10,7 +10,7 @@
 
     <LinearGradientBrush x:Key="LightGradientBrush" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="{StaticResource BackgroundColorLight}" Offset="0.0" />
-        <GradientStop Color="{StaticResource PrimaryColorLight}" Offset="1.0" />
+        <GradientStop Color="{StaticResource SecondaryColorLight}" Offset="1.0" />
     </LinearGradientBrush>
 
     <LinearGradientBrush x:Key="DarkGradientBrush" StartPoint="0,0" EndPoint="1,1">

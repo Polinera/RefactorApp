@@ -18,7 +18,7 @@
         <VerticalStackLayout 
             IsVisible="{Binding IsAddGoalVisible}" 
             Padding="10" Spacing="10" 
-            BackgroundColor="LightGray">
+            BackgroundColor="{AppThemeBinding Light={StaticResource SecondaryColorLight}, Dark={StaticResource SecondaryColorDark}}">
             <Entry 
                 Text="{Binding NewGoalTitle, Mode=TwoWay}" 
                 Placeholder="Enter goal title..." />

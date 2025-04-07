@@ -1,14 +1,8 @@
 ﻿using Newtonsoft.Json;
 using ReactiveUI;
 using RefactorApp.Models.Models;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Linq;
 using System.Reactive;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RefactorApp.Core.ViewModels
 {

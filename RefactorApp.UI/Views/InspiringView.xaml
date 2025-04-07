@@ -8,12 +8,10 @@
     x:TypeArguments="vm:InspiringViewModel">
 
     <VerticalStackLayout>
-        <Label
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center"
-            HorizontalOptions="Center" />
+        
         <Button
             Text="History"
+            Style="{StaticResource ButtonReflectionStyle}"
             Command="{Binding NavigateCommand}" 
             CommandParameter="history" />
     </VerticalStackLayout>
